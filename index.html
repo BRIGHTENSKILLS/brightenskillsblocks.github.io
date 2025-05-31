@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRIGHTEN SKILLS</title>
     <style>
         body {
@@ -19,10 +19,9 @@
 
         .header {
             background: rgba(107, 63, 160, 0.9);
-            padding: 15px 20px;
+            padding: 5px 20px;
             z-index: 1000;
-            height: auto;
-            min-height: 120px;
+            height: 80px;
             display: flex;
             align-items: center;
             flex-shrink: 0;
@@ -31,9 +30,8 @@
         }
 
         .header img.logo {
-            height: 140px;
+            height: 70px;
             width: auto;
-            max-width: 100%;
         }
 
         .content {
@@ -41,252 +39,40 @@
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: calc(100vh - 260px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
         }
 
         iframe {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
-            overflow: hidden;
-            -webkit-overflow-scrolling: touch;
-            transition: transform 0.3s ease;
-            transform: scale(1.2);
-            transform-origin: center center;
-        }
-
-        .zoom-controls {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
-        }
-
-        .zoom-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(107, 63, 160, 0.9);
-            border: 3px solid white;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .zoom-btn:hover {
-            background: rgba(107, 63, 160, 1);
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .zoom-btn:active {
-            transform: scale(0.95);
+            overflow: auto;
         }
 
         footer {
             background: rgba(107, 63, 160, 0.9);
-            padding: 20px;
+            padding: 5px 20px;
             z-index: 1000;
-            min-height: 90px;
+            height: 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             width: 100%;
             box-sizing: border-box;
-            position: relative;
         }
 
         footer p {
             margin: 0;
             white-space: nowrap;
             animation: scroll-left 15s linear infinite;
-            font-size: 18px;
-            text-align: center;
-            width: 100%;
         }
 
         @keyframes scroll-left {
             0%   { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 10px 15px;
-                min-height: 100px;
-            }
-
-            .header img.logo {
-                height: 110px;
-            }
-
-            .content {
-                padding: 0;
-                height: calc(100vh - 220px);
-            }
-
-            .iframe-container {
-                width: 100%;
-                height: 100%;
-                max-width: 100%;
-                padding: 0;
-            }
-
-            iframe {
-                width: 100% !important;
-                height: 100% !important;
-                transform: scale(0.95) !important;
-                transform-origin: center center !important;
-                overflow: auto;
-            }
-
-            .zoom-controls {
-                bottom: 90px;
-                right: 15px;
-            }
-
-            .zoom-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                min-height: 90px;
-                padding: 8px 10px;
-            }
-
-            .header img.logo {
-                height: 90px;
-            }
-
-            .content {
-                padding: 0;
-                height: calc(100vh - 200px);
-            }
-
-            .iframe-container {
-                width: 100%;
-                height: 100%;
-                max-width: 100%;
-                padding: 0;
-            }
-
-            iframe {
-                width: 100% !important;
-                height: 100% !important;
-                transform: scale(0.9) !important;
-                transform-origin: center center !important;
-                overflow: auto;
-            }
-
-            .zoom-controls {
-                bottom: 80px;
-                right: 10px;
-            }
-
-            .zoom-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-        }
-
-        /* Handle orientation changes */
-        @media screen and (orientation: landscape) {
-            .header {
-                min-height: 90px;
-                padding: 10px 15px;
-            }
-
-            .header img.logo {
-                height: 80px;
-            }
-
-            .content {
-                height: calc(100vh - 180px);
-                padding: 0;
-            }
-
-            .iframe-container {
-                width: 100%;
-                height: 100%;
-                max-width: 100%;
-                padding: 0;
-            }
-
-            iframe {
-                width: 100% !important;
-                height: 100% !important;
-                transform: scale(0.95) !important;
-                transform-origin: center center !important;
-                overflow: auto;
-            }
-        }
-
-        /* Specific landscape adjustments for mobile */
-        @media screen and (orientation: landscape) and (max-height: 500px) {
-            .header {
-                min-height: 80px;
-                padding: 5px 10px;
-            }
-
-            .header img.logo {
-                height: 70px;
-            }
-
-            .content {
-                height: calc(100vh - 160px);
-                padding: 0;
-            }
-
-            .iframe-container {
-                padding: 0;
-            }
-
-            iframe {
-                transform: scale(0.9) !important;
-                overflow: auto;
-            }
-        }
-
-        /* Handle touch devices */
-        @media (hover: none) and (pointer: coarse) {
-            iframe {
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: contain;
-            }
         }
     </style>
 </head>
@@ -295,51 +81,10 @@
         <img src="static/images/logo.png" alt="BRIGHTEN SKILLS Logo" class="logo">
     </div>
     <div class="content">
-        <div class="iframe-container">
-            <iframe src="https://pictoblox.ai/" allowfullscreen scrolling="yes"></iframe>
-        </div>
-    </div>
-    <div class="zoom-controls">
-        <button class="zoom-btn" onclick="zoomIn()">+</button>
-        <button class="zoom-btn" onclick="zoomOut()">-</button>
+        <iframe src="https://pictoblox.ai/" allowfullscreen scrolling="yes"></iframe>
     </div>
     <footer>
         <p>Founder and CEO of BRIGHTEN SKILLS: Pallikonda Naresh | Contact Numbers: 8297209437, 7601045276</p>
     </footer>
-
-    <script>
-        let currentZoom = 1.2;
-        const iframe = document.querySelector('iframe');
-
-        function zoomIn() {
-            if (currentZoom < 2) {
-                currentZoom += 0.1;
-                updateZoom();
-            }
-        }
-
-        function zoomOut() {
-            if (currentZoom > 0.5) {
-                currentZoom -= 0.1;
-                updateZoom();
-            }
-        }
-
-        function updateZoom() {
-            iframe.style.transform = `scale(${currentZoom})`;
-        }
-
-        // Initialize zoom based on screen size
-        window.addEventListener('load', function() {
-            if (window.innerWidth <= 480) {
-                currentZoom = 0.9;
-            } else if (window.innerWidth <= 768) {
-                currentZoom = 0.95;
-            } else {
-                currentZoom = 1.2;
-            }
-            updateZoom();
-        });
-    </script>
 </body>
 </html> 
