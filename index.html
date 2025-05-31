@@ -123,7 +123,7 @@
             iframe {
                 width: 100% !important;
                 height: 100% !important;
-                transform: none !important;
+                transform: scale(0.85) !important;
                 transform-origin: 0 0 !important;
             }
 
@@ -155,7 +155,7 @@
             iframe {
                 width: 100% !important;
                 height: 100% !important;
-                transform: none !important;
+                transform: scale(0.75) !important;
             }
 
             footer {
@@ -167,17 +167,17 @@
         /* Handle orientation changes */
         @media screen and (orientation: landscape) {
             .header {
-                min-height: 30px;
-                padding: 2px 5px;
+                min-height: 45px;
+                padding: 5px 10px;
             }
 
             .header img.logo {
-                height: 25px;
+                height: 40px;
             }
 
             .content {
-                height: calc(100vh - 50px);
-                padding: 0;
+                height: calc(100vh - 85px);
+                padding: 5px;
             }
 
             .iframe-container {
@@ -188,35 +188,39 @@
             iframe {
                 width: 100% !important;
                 height: 100% !important;
-                transform: none !important;
+                transform: scale(0.7) !important;
             }
 
             footer {
-                min-height: 20px;
-                padding: 2px 5px;
+                min-height: 35px;
+                padding: 5px 10px;
             }
 
             footer p {
-                font-size: 10px;
+                font-size: 12px;
             }
         }
 
         /* Specific landscape adjustments for mobile */
         @media screen and (orientation: landscape) and (max-height: 500px) {
             .header {
-                min-height: 25px;
+                min-height: 40px;
             }
 
             .header img.logo {
-                height: 20px;
+                height: 35px;
             }
 
             .content {
-                height: calc(100vh - 45px);
+                height: calc(100vh - 75px);
+            }
+
+            iframe {
+                transform: scale(0.65) !important;
             }
 
             footer {
-                min-height: 15px;
+                min-height: 30px;
             }
         }
 
