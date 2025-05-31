@@ -116,7 +116,21 @@
             }
 
             .iframe-container {
-                transform: scale(0.75);
+                transform: none;
+            }
+
+            iframe {
+                width: 100% !important;
+                height: 100% !important;
+                transform: none !important;
+                transform-origin: 0 0 !important;
+                zoom: 0.75;
+                -moz-transform: scale(0.75);
+                -moz-transform-origin: 0 0;
+                -o-transform: scale(0.75);
+                -o-transform-origin: 0 0;
+                -webkit-transform: scale(0.75);
+                -webkit-transform-origin: 0 0;
             }
 
             footer {
@@ -139,8 +153,11 @@
                 height: calc(100vh - 120px);
             }
 
-            .iframe-container {
-                transform: scale(0.65);
+            iframe {
+                zoom: 0.65;
+                -moz-transform: scale(0.65);
+                -o-transform: scale(0.65);
+                -webkit-transform: scale(0.65);
             }
 
             footer {
@@ -163,8 +180,11 @@
                 height: calc(100vh - 80px);
             }
 
-            .iframe-container {
-                transform: scale(0.6);
+            iframe {
+                zoom: 0.6;
+                -moz-transform: scale(0.6);
+                -o-transform: scale(0.6);
+                -webkit-transform: scale(0.6);
             }
 
             footer {
@@ -175,8 +195,11 @@
 
         /* Additional mobile optimizations */
         @media (max-width: 360px) {
-            .iframe-container {
-                transform: scale(0.55);
+            iframe {
+                zoom: 0.55;
+                -moz-transform: scale(0.55);
+                -o-transform: scale(0.55);
+                -webkit-transform: scale(0.55);
             }
         }
 
@@ -185,16 +208,6 @@
             iframe {
                 -webkit-overflow-scrolling: touch;
                 overscroll-behavior: contain;
-            }
-        }
-
-        /* Force mobile view for PictoBlox */
-        @media (max-width: 768px) {
-            iframe {
-                width: 100% !important;
-                height: 100% !important;
-                transform: scale(1) !important;
-                transform-origin: 0 0 !important;
             }
         }
     </style>
