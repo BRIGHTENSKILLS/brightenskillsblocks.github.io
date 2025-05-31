@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BRIGHTEN SKILLS</title>
     <style>
         body {
@@ -21,7 +21,8 @@
             background: rgba(107, 63, 160, 0.9);
             padding: 5px 20px;
             z-index: 1000;
-            height: 80px;
+            height: auto;
+            min-height: 60px;
             display: flex;
             align-items: center;
             flex-shrink: 0;
@@ -30,8 +31,9 @@
         }
 
         .header img.logo {
-            height: 70px;
+            height: 80px;
             width: auto;
+            max-width: 100%;
         }
 
         .content {
@@ -39,6 +41,20 @@
             position: relative;
             overflow: hidden;
             width: 100%;
+            height: calc(100vh - 140px); /* Adjusted to account for header and footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         iframe {
@@ -49,30 +65,96 @@
             height: 100%;
             border: none;
             overflow: auto;
+            transform-origin: 0 0;
         }
 
         footer {
             background: rgba(107, 63, 160, 0.9);
-            padding: 5px 20px;
+            padding: 10px 20px;
             z-index: 1000;
-            height: 40px;
+            min-height: 50px;
             display: flex;
             align-items: center;
+            justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             width: 100%;
             box-sizing: border-box;
+            position: relative;
         }
 
         footer p {
             margin: 0;
             white-space: nowrap;
             animation: scroll-left 15s linear infinite;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
         }
 
         @keyframes scroll-left {
             0%   { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 5px 10px;
+            }
+
+            .header img.logo {
+                height: 60px;
+            }
+
+            .content {
+                padding: 5px;
+                height: calc(100vh - 130px);
+            }
+
+            footer {
+                padding: 8px 10px;
+                min-height: 40px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header img.logo {
+                height: 50px;
+            }
+
+            .content {
+                padding: 2px;
+                height: calc(100vh - 120px);
+            }
+
+            footer {
+                padding: 5px 10px;
+                min-height: 35px;
+            }
+        }
+
+        /* Handle orientation changes */
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+            .header {
+                min-height: 40px;
+            }
+
+            .header img.logo {
+                height: 45px;
+            }
+
+            .content {
+                height: calc(100vh - 80px);
+            }
+
+            footer {
+                min-height: 30px;
+                padding: 3px 10px;
+            }
         }
     </style>
 </head>
@@ -81,7 +163,9 @@
         <img src="static/images/logo.png" alt="BRIGHTEN SKILLS Logo" class="logo">
     </div>
     <div class="content">
-        <iframe src="https://pictoblox.ai/" allowfullscreen scrolling="yes"></iframe>
+        <div class="iframe-container">
+            <iframe src="https://pictoblox.ai/" allowfullscreen scrolling="yes"></iframe>
+        </div>
     </div>
     <footer>
         <p>Founder and CEO of BRIGHTEN SKILLS: Pallikonda Naresh | Contact Numbers: 8297209437, 7601045276</p>
