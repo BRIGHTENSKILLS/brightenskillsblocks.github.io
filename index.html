@@ -41,7 +41,7 @@
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: calc(100vh - 140px); /* Adjusted to account for header and footer */
+            height: calc(100vh - 140px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -55,6 +55,9 @@
             height: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         iframe {
@@ -66,6 +69,7 @@
             border: none;
             overflow: auto;
             transform-origin: 0 0;
+            -webkit-overflow-scrolling: touch;
         }
 
         footer {
@@ -111,6 +115,10 @@
                 height: calc(100vh - 130px);
             }
 
+            .iframe-container {
+                transform: scale(0.95);
+            }
+
             footer {
                 padding: 8px 10px;
                 min-height: 40px;
@@ -129,6 +137,10 @@
             .content {
                 padding: 2px;
                 height: calc(100vh - 120px);
+            }
+
+            .iframe-container {
+                transform: scale(0.9);
             }
 
             footer {
@@ -151,9 +163,28 @@
                 height: calc(100vh - 80px);
             }
 
+            .iframe-container {
+                transform: scale(0.85);
+            }
+
             footer {
                 min-height: 30px;
                 padding: 3px 10px;
+            }
+        }
+
+        /* Additional mobile optimizations */
+        @media (max-width: 360px) {
+            .iframe-container {
+                transform: scale(0.8);
+            }
+        }
+
+        /* Handle touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            iframe {
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
             }
         }
     </style>
